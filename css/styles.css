@@ -185,7 +185,7 @@ body {
   text-decoration-line: underline;
   cursor: pointer;
   transition: color 0.3s ease-in;
-  justify-self: right;
+  /* justify-self: right; */
 }
 
 .btn-change:hover {
@@ -249,6 +249,12 @@ body {
 
 /*** MEDIA QUERIES ***/
 @media (min-width: 500px) {
+  body {
+    background-color: var(--clr-pale-blue);
+    background-image: url("../images/pattern-background-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
   /* Layout */
   .container {
     max-width: 450px;

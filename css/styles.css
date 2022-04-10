@@ -1,0 +1,304 @@
+/* Layout -- the designs were created to the following widths:
+  Mobile: 375px
+  Desktop: 1440px */
+
+/*** ROOT ***/
+/* Variables */
+:root {
+  /* Primary */
+  --clr-pale-blue: hsl(225, 100%, 94%);
+  --clr-bright-blue: hsl(245, 75%, 52%);
+
+  /* Neutral */
+  --clr-very-pale-blue: hsl(225, 100%, 98%);
+  --clr-desaturated-blue: hsl(224, 23%, 55%);
+  --clr-dark-blue: hsl(223, 47%, 23%);
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*** GLOBAL ***/
+body {
+  background-color: var(--clr-pale-blue);
+  background-image: url("../images/pattern-background-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  font-family: "Red Hat Display", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .image-music-icon {
+  margin-right: 20px;
+} */
+
+/*** TYPOGRAPHY ***/
+.card-title {
+  color: hsla(223, 46%, 23%, 1);
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 29px;
+  margin-bottom: 16px;
+}
+
+.card-body-text {
+  color: hsla(223, 23%, 55%, 1);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 25px;
+  margin: 0 auto;
+  margin-bottom: 24px;
+  max-width: 263px;
+}
+
+.card-body-plan-type {
+  color: hsla(223, 46%, 23%, 1);
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 19px;
+}
+
+.card-body-plan-price {
+  color: hsla(224, 23%, 55%, 1);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+}
+
+/* .card-body-change {
+  color: hsla(245, 75%, 52%, 1);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 17px;
+  text-decoration-line: underline;
+} */
+
+/* .card-body-payment {
+  color: hsla(0, 0%, 100%, 1);
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 20px;
+} */
+
+.card-body-cancel {
+  background-color: transparent;
+  color: hsla(224, 23%, 55%, 1);
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 20px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: color 0.3s ease-in;
+}
+
+.card-body-cancel:hover {
+  color: hsla(223, 47%, 23%, 1);
+}
+
+/*** BUTTONS ***/
+.btn-change {
+  color: hsla(245, 75%, 52%, 1);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 17px;
+  text-decoration-line: underline;
+  cursor: pointer;
+  transition: color 0.3s ease-in;
+  justify-self: right;
+}
+
+.btn-change:hover {
+  color: hsla(245, 83%, 68%, 1);
+  text-decoration-line: none;
+}
+
+.btn-payment {
+  background-color: hsla(245, 75%, 52%, 1);
+  color: hsla(0, 0%, 100%, 1);
+  font-size: 15px;
+  font-weight: 900;
+  line-height: 20px;
+  box-shadow: 0px 20px 20px 0px hsla(245, 75%, 52%, 0.19);
+
+  display: block;
+  padding: 15px;
+  border-radius: 11px;
+  margin: 24px 0;
+  width: 100%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in;
+}
+
+.btn-payment:hover {
+  background-color: hsla(245, 83%, 68%, 1);
+}
+
+/*** LAYOUT ***/
+.container {
+  box-shadow: 0px 40px 40px -20px hsla(228, 87%, 39%, 0.15);
+  max-width: 327px;
+}
+
+.card-header {
+  border-radius: 20px 20px 0 0;
+}
+
+.card-body {
+  background-color: #fff;
+  padding: 32px 24px;
+  border-radius: 0 0 20px 20px;
+}
+
+.card-body-plan {
+  background-color: hsla(228, 100%, 99%, 1);
+  border-radius: 11px;
+  padding: 16px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.plan-body {
+  display: flex;
+}
+
+.card-body-plan-details {
+  margin: 0 50px 0 20px;
+}
+
+/*** MEDIA QUERIES ***/
+@media (min-width: 500px) {
+  /* Layout */
+  .container {
+    max-width: 450px;
+  }
+  .card-body {
+    padding: 45px 48px 48px 48px;
+  }
+  .card-body-plan {
+    padding: 25px 24px;
+  }
+
+  /* Typography */
+  .card-title {
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 37px;
+    margin-bottom: 17px;
+  }
+  .card-body-text {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 26px;
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+  .card-body-plan-type {
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 21px;
+  }
+
+  .card-body-plan-price {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 21px;
+  }
+  .btn-change {
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 19px;
+  }
+  .btn-payment {
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 20px;
+    margin: 32px 0;
+  }
+  .card-body-cancel {
+    font-size: 15px;
+    font-weight: 900;
+    line-height: 20px;
+  }
+}
